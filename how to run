@@ -1,0 +1,9 @@
+TO RUN BACKEND:
+cd backend
+mvn spring-boot:run
+
+TO RUN FRONTEND:
+cd frontend
+npm run dev
+
+url:http://localhost:5173/

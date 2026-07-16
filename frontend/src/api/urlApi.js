@@ -1,0 +1,25 @@
+const BASE = "http://localhost:8081/api";
+
+export async function shortenUrl(url, ttlHours = null) {
+  const res = await fetch(`${BASE}/shorten`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ url, ttlHours }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to shorten URL");
+  }
+  return res.json();
+}
+
+export async function fetchAllUrls() {
+  const res = await fetch(`${BASE}/urls`);
+  if (!res.ok) throw new Error("Failed to fetch URLs");
+  return res.json();
+}
+
+export async function deleteUrl(shortCode) {
+  const res = await fetch(`${BASE}/urls/${shortCode}`, { method: "DELETE" });
+  if (!res.ok) throw new Error("Failed to delete URL");
+}
