@@ -26,7 +26,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                         "http://localhost:5173",
                         "http://localhost:3000",
-                        "https://YOUR-VERCEL-APP.vercel.app"
+                        "https://url-shortener-backend-ifux.onrender.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
