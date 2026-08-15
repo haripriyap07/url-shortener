@@ -1,4 +1,3 @@
-```javascript
 const BASE = import.meta.env.VITE_API_URL || "https://url-shortener-backend-43qr.onrender.com/api";
 
 export async function shortenUrl(url, ttlHours = null) {
@@ -45,4 +44,3 @@ export async function deleteUrl(shortCode) {
     throw new Error("Failed to delete URL");
   }
 }
-```
