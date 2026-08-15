@@ -1,5 +1,5 @@
 ```javascript
-const BASE = "https://url-shortener-backend-ifux.onrender.com/api";
+const BASE = import.meta.env.VITE_API_URL || "https://url-shortener-backend-43qr.onrender.com/api";
 
 export async function shortenUrl(url, ttlHours = null) {
   const res = await fetch(`${BASE}/shorten`, {
